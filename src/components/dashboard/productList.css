@@ -1,0 +1,75 @@
+/* productList.css */
+
+.product-list {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.product-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.product-list th, .product-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.product-list th {
+  background-color: #f2f2f2;
+}
+
+.product-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.product-list .image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-list .product-image {
+  max-width: 100px;
+  height: auto;
+  margin: 5px;
+}
+
+.product-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-list li {
+  margin-bottom: 5px;
+}
+
+.product-list button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.product-list button:hover {
+  background-color: #45a049;
+}
+
+.product-list .no-data {
+  font-style: italic;
+  color: #888;
+}

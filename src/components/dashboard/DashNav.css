@@ -1,0 +1,55 @@
+/* Import this CSS into your DashNav component or main CSS file */
+
+/* Navigation Container */
+.navbar {
+    background-color: var(--primary-color); /* Background color for the nav */
+    padding: 20px;
+    border-right: .3px solid grey;
+    height: 100vh;
+    width: 250px; /* Set a fixed width for the sidebar */
+    top: 0;
+    position: sticky;
+    left: 0;
+
+  }
+  
+  /* Navigation List */
+  .navbar-list {
+    position: sticky;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+  
+  }
+  
+  .navbar-item {
+    margin-bottom: 15px; /* Space between items */
+  }
+  
+  .navbar-item a {
+    color: var(--links-color); /* Link color */
+    text-decoration: none;
+    font-size: 1rem; /* Font size for links */
+    font-weight: 500; /* Font weight */
+    display: block; /* Make links block elements for easy clicking */
+    padding: 10px 15px; /* Padding around text */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  
+  .navbar-item a.active {
+    background-color: var(--accent-color); /* Background for active link */
+    color: #fff; /* Text color for active link */
+    font-weight: 600; /* Slightly bolder active link */
+  }
+  
+  .navbar-item a:hover {
+    background-color: var(--secondary-color); /* Background color on hover */
+    color: #fff; /* Text color on hover */
+  }
+  
+  .navbar-item a:focus {
+    outline: 2px solid var(--highlight-color); /* Focus outline */
+    outline-offset: 2px;
+  }
+  

@@ -1,0 +1,224 @@
+/* cart.css */
+
+/* Cart container styling */
+.cart {
+    display: grid;
+    overflow-y: auto;
+    place-content: start;
+    color: var(--text-color); /* Use global text color */
+    height: 100%;
+    top: 0;
+    z-index: 20000;
+    position: fixed;
+    right: 0;
+    padding: 1rem; /* Adjust padding to use rem units for consistency */
+    overflow-x: hidden;
+    animation: slideIn 0.8s ease-out forwards, bounce 0.8s ease-in-out 0.8s;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color); /* Use global background color */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Define keyframes for sliding in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Define keyframes for bounce effect */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Header styling */
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem; /* Adjust padding to use rem units */
+    border-bottom: 1px solid var(--border-color); /* Use global border color */
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 1.25rem; /* Consistent font size with global styles */
+}
+
+/* Close button styling */
+.close-cart-btn {
+    display: grid;
+    place-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.close-cart-btn:hover {
+    background-color: var(--border-color); /* Use global border color for hover */
+}
+
+/* Cart list styling */
+.cart ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color); /* Use global border color */
+    padding-bottom: 10px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-item-details {
+    flex: 1;
+    text-align: left;
+    color: var(--text-color); /* Use global text color */
+}
+
+/* Quantity controls styling */
+.quantity-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.quantity-btn {
+    display: grid;
+    place-content: center;
+    color: var(--text-color); /* Use global text color */
+    background-color: var(--background-color); /* Use global background color */
+    border: 1px solid var(--border-color); /* Use global border color */
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: var(--border-color); /* Use global border color for hover */
+}
+
+/* Remove item button styling */
+.remove-item {
+    color: #fff;
+    background-color: var(--accent-color); /* Use global accent color */
+    border: 2px solid var(--primary-color); /* Use global primary color */
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: darken(var(--accent-color), 10%); /* Darker accent color for hover */
+}
+
+/* Total amount section styling */
+.total-amount {
+    text-align: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color); /* Use global border color */
+}
+
+.total-amount h3 {
+    margin: 0;
+    font-size: 1rem; /* Consistent font size with global styles */
+}
+
+/* Cart actions section styling */
+.cart-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Clear cart button styling */
+.clear-cart {
+    background-color: var(--background-color); /* Use global background color */
+    color: var(--text-color); /* Use global text color */
+    border: 1px solid var(--border-color); /* Use global border color */
+    padding: 0.5rem 1rem;
+    font-size: 1rem; /* Consistent font size with global styles */
+    border-radius: 4px;
+}
+
+.clear-cart:hover {
+    background-color: var(--border-color); /* Use global border color for hover */
+}
+
+/* Checkout link styling */
+.checkout-link {
+    background-color: var(--primary-color); /* Use global primary color */
+    color: #fff; /* White text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem; /* Consistent font size with global styles */
+}
+
+.checkout-link:hover {
+    background-color: darken(var(--primary-color), 10%); /* Darker primary color for hover */
+}
+
+/* Empty cart styling */
+.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    gap: 20px;
+    animation: empty 9s ease infinite;
+}
+
+/* Keyframes for empty cart animation */
+@keyframes empty {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .cart {
+        width: 100%;
+        padding: 0.5rem; /* Adjust padding to use rem units */
+    }
+}
