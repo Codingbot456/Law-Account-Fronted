@@ -27,10 +27,10 @@ function CreateForm({ product }) {
     const fetchData = async () => {
       try {
         const [sizesData, colorsData, categoriesData, statusesData] = await Promise.all([
-          axios.get('https://law-account-backend.vercel.app//api/sizes'),
-          axios.get('https://law-account-backend.vercel.app//api/colors'),
-          axios.get('https://law-account-backend.vercel.app//api/categories'),
-          axios.get('https://law-account-backend.vercel.app//api/statuses'),
+          axios.get('https://law-account-backend.vercel.app/api/sizes'),
+          axios.get('https://law-account-backend.vercel.app/api/colors'),
+          axios.get('https://law-account-backend.vercel.app/api/categories'),
+          axios.get('https://law-account-backend.vercel.app/api/statuses'),
         ]);
         setSizes(sizesData.data);
         setColors(colorsData.data);
@@ -47,7 +47,7 @@ function CreateForm({ product }) {
 
   useEffect(() => {
     if (category) {
-      axios.get('https://law-account-backend.vercel.app//api/subcategories', { params: { category_id: category } })
+      axios.get('https://law-account-backend.vercel.app/api/subcategories', { params: { category_id: category } })
         .then(response => setSubcategories(response.data))
         .catch(error => console.error('Error fetching subcategories:', error));
     } else {
@@ -95,7 +95,7 @@ function CreateForm({ product }) {
     Array.from(images).forEach(image => formData.append('images', image));
 
     try {
-      const url = product ? `https://law-account-backend.vercel.app//api/products/${product.product_id}` : 'https://law-account-backend.vercel.app//api/products';
+      const url = product ? `https://law-account-backend.vercel.app/api/products/${product.product_id}` : 'https://law-account-backend.vercel.app/api/products';
       const method = product ? 'put' : 'post';
       const response = await axios[method](url, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },

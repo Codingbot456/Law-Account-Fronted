@@ -48,7 +48,7 @@ const Registration = () => {
           console.log(`${key}: ${value}`);
         }
 
-        await axios.post('https://law-account-backend.vercel.app//api/register', formData, {
+        await axios.post('https://law-account-backend.vercel.app/api/register', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         alert('Registration Successful');

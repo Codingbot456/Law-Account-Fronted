@@ -29,7 +29,7 @@ const StudyAids = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('https://law-account-backend.vercel.app//api/products/category/3'); // Adjust endpoint URL as needed
+        const response = await axios.get('https://law-account-backend.vercel.app/api/products/category/3'); // Adjust endpoint URL as needed
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);

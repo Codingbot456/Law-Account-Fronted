@@ -23,7 +23,7 @@ const CreatePostForm = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://law-account-backend.vercel.app//api/blog/categories');
+        const response = await axios.get('https://law-account-backend.vercel.app/api/blog/categories');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -57,7 +57,7 @@ const CreatePostForm = () => {
     }
 
     try {
-      const response = await axios.post('https://law-account-backend.vercel.app//api/blog/posts', formData, {
+      const response = await axios.post('https://law-account-backend.vercel.app/api/blog/posts', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

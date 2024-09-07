@@ -19,7 +19,7 @@ const PaymentForm = () => {
     event.preventDefault();
   
     try {
-      const response = await fetch('https://law-account-backend.vercel.app//api/mpesa2/stkpush2', {
+      const response = await fetch('https://law-account-backend.vercel.app/api/mpesa2/stkpush2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -14,14 +14,14 @@ function ProductList() {
 
   // Fetch all products and categories
   useEffect(() => {
-    axios.get('https://law-account-backend.vercel.app//api/products')
+    axios.get('https://law-account-backend.vercel.app/api/products')
       .then(response => {
         console.log('Fetched products:', response.data); // Log fetched products
         setProducts(response.data);
       })
       .catch(error => console.error('Error fetching products:', error));
 
-    axios.get('https://law-account-backend.vercel.app//api/categories')
+    axios.get('https://law-account-backend.vercel.app/api/categories')
       .then(response => {
         console.log('Fetched categories:', response.data); // Log fetched categories
         setCategories(response.data);
@@ -32,7 +32,7 @@ function ProductList() {
   // Fetch subcategories based on selected category ID
   useEffect(() => {
     if (selectedCategoryId !== null) {
-      axios.get(`https://law-account-backend.vercel.app//api/subcategories?category_id=${selectedCategoryId}`)
+      axios.get(`https://law-account-backend.vercel.app/api/subcategories?category_id=${selectedCategoryId}`)
         .then(response => {
           console.log('Fetched subcategories:', response.data); // Log fetched subcategories
           const subcategoryMap = response.data.reduce((map, subcategory) => {

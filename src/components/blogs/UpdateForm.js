@@ -22,7 +22,7 @@ const UpdateForm = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://law-account-backend.vercel.app//api/blog/categories');
+        const response = await axios.get('https://law-account-backend.vercel.app/api/blog/categories');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -36,7 +36,7 @@ const UpdateForm = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`https://law-account-backend.vercel.app//api/blog/posts/${id}`);
+        const response = await axios.get(`https://law-account-backend.vercel.app/api/blog/posts/${id}`);
         const postData = response.data;
         setPost(postData);
         setTitle(postData.title);
@@ -82,7 +82,7 @@ const UpdateForm = () => {
     formData.append('images_to_remove', JSON.stringify(imagesToRemove));
 
     try {
-      await axios.put(`https://law-account-backend.vercel.app//api/blog/posts/${id}`, formData, {
+      await axios.put(`https://law-account-backend.vercel.app/api/blog/posts/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

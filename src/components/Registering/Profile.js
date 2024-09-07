@@ -34,7 +34,7 @@ const EditProfile = () => {
       }
 
       try {
-        const res = await axios.get('https://law-account-backend.vercel.app//api/user', {
+        const res = await axios.get('https://law-account-backend.vercel.app/api/user', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFormData(res.data);
@@ -58,11 +58,11 @@ const EditProfile = () => {
       const userId = decodedToken.id;
 
       try {
-        const askedRes = await axios.get(`https://law-account-backend.vercel.app//api/submissions/user/${userId}`, {
+        const askedRes = await axios.get(`https://law-account-backend.vercel.app/api/submissions/user/${userId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
-        const answeredRes = await axios.get(`https://law-account-backend.vercel.app//api/submissions/user/answers/${userId}`, {
+        const answeredRes = await axios.get(`https://law-account-backend.vercel.app/api/submissions/user/answers/${userId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -92,7 +92,7 @@ const EditProfile = () => {
       const userId = decodedToken.id;
 
       try {
-        const res = await axios.get(`https://law-account-backend.vercel.app//api/orders/user-orders/${userId}`, {
+        const res = await axios.get(`https://law-account-backend.vercel.app/api/orders/user-orders/${userId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setOrders(res.data);
@@ -138,7 +138,7 @@ const EditProfile = () => {
     });
 
     try {
-      await axios.put('https://law-account-backend.vercel.app//api/user', formDataToSend, {
+      await axios.put('https://law-account-backend.vercel.app/api/user', formDataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

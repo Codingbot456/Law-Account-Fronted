@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://law-account-backend.vercel.app//api/blog';
+const API_URL = 'https://law-account-backend.vercel.app/api/blog';
 
 // Fetch all posts
 export const getPosts = () => axios.get(`${API_URL}/posts`);

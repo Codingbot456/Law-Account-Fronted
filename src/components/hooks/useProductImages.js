@@ -23,7 +23,7 @@ const useProductDetails = (productId) => {
         const fetchDetails = async () => {
             console.log("Fetching product details for ID:", productId);
             try {
-                const response = await axios.get(`https://law-account-backend.vercel.app//api/products/${productId}`);
+                const response = await axios.get(`https://law-account-backend.vercel.app/api/products/${productId}`);
                 console.log("Fetched Product Data:", response.data);
 
                 // Update the product state mapping based on the API response
