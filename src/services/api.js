@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+//endpoints//
+
 const API_URL = 'https://law-account-backend.vercel.app/api/blog';
 
 // Fetch all posts
