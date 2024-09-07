@@ -27,7 +27,7 @@ const Login = () => {
         return;
       }
 
-      const res = await axios.post('http://localhost:4000/api/forgot-password', { email });
+      const res = await axios.post('https://law-account-backend.vercel.app//api/forgot-password', { email });
       console.log('Password reset response:', res.data);
       setMessage('Password reset instructions sent to your email');
     } catch (error) {
@@ -42,7 +42,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/login', formData);
+      const res = await axios.post('https://law-account-backend.vercel.app//api/login', formData);
       if (res.data.token) {
         const { token, role, userId } = res.data;
         

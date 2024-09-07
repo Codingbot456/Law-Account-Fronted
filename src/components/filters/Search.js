@@ -13,7 +13,7 @@ const Search = () => {
     const fetchSuggestions = async () => {
       if (searchQuery.length > 1) {
         try {
-          const response = await axios.get('http://localhost:4000/api/products/suggest', {
+          const response = await axios.get('https://law-account-backend.vercel.app//api/products/suggest', {
             params: { q: searchQuery }
           });
           setSuggestions(response.data);
@@ -33,7 +33,7 @@ const Search = () => {
     const fetchSearchResults = async () => {
       if (searchQuery.length > 1) {
         try {
-          const response = await axios.get('http://localhost:4000/api/products/search', {
+          const response = await axios.get('https://law-account-backend.vercel.app//api/products/search', {
             params: { q: searchQuery }
           });
           setSearchResults(response.data);

@@ -43,7 +43,7 @@ const ResetPassword = () => {
         if (Object.keys(newErrors).length === 0) {
             try {
                 const { newPassword } = formData;
-                await axios.post(`http://localhost:4000/api/reset-password/${token}`, { newPassword });
+                await axios.post(`https://law-account-backend.vercel.app//api/reset-password/${token}`, { newPassword });
                 setSubmitted(true);
                 alert('Password reset successful');
                 // Redirect user to login or any other page after successful password reset

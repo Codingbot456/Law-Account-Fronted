@@ -18,7 +18,7 @@ const Featured1 = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/products/status/1'); // Adjust endpoint URL as needed
+        const response = await axios.get('https://law-account-backend.vercel.app//api/products/status/1'); // Adjust endpoint URL as needed
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);

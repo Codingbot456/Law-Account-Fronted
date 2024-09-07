@@ -15,7 +15,7 @@ const SubmissionList = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/submissions');
+        const response = await axios.get('https://law-account-backend.vercel.app//api/submissions');
         setSubmissions(response.data);
         setFilteredSubmissions(response.data); // Initialize filteredSubmissions with fetched data
       } catch (err) {
@@ -85,7 +85,7 @@ const SubmissionList = () => {
                     <ul className="attachment-list">
                       {parseAttachments(submission.attachments).map((file, index) => (
                         <li key={index}>
-                          <a href={`http://localhost:4000/uploads/${file}`} target="_blank" rel="noopener noreferrer">
+                          <a href={`https://law-account-backend.vercel.app//uploads/${file}`} target="_blank" rel="noopener noreferrer">
                             {file}
                           </a>
                         </li>

@@ -13,7 +13,7 @@ const AllUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/users', {
+        const response = await axios.get('https://law-account-backend.vercel.app//api/users', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         if (Array.isArray(response.data)) {

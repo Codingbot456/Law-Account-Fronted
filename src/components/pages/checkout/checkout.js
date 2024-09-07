@@ -32,7 +32,7 @@ const CheckoutForm = () => {
   useEffect(() => {
     const fetchCounties = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/orders/counties');
+        const response = await axios.get('https://law-account-backend.vercel.app//api/orders/counties');
         setCounties(response.data);
         console.log('Counties fetched:', response.data); // Log counties fetched
       } catch (error) {
@@ -94,7 +94,7 @@ const CheckoutForm = () => {
     console.log('Preparing to create order with the following details:', dataToSend); // Log data to send
 
     try {
-      const response = await axios.post('http://localhost:4000/api/orders/', dataToSend, {
+      const response = await axios.post('https://law-account-backend.vercel.app//api/orders/', dataToSend, {
         headers: { 'Content-Type': 'application/json' },
       });
 

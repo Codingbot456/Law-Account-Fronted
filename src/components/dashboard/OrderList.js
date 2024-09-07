@@ -12,7 +12,7 @@ const OrdersList = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/orders/');
+        const response = await axios.get('https://law-account-backend.vercel.app//api/orders/');
         setOrders(response.data);
         setIsLoading(false);
       } catch (err) {
@@ -46,12 +46,12 @@ const OrdersList = () => {
 
       console.log('Sending update request with payload:', payload);
 
-      const response = await axios.put('http://localhost:4000/api/orders/status', payload);
+      const response = await axios.put('https://law-account-backend.vercel.app//api/orders/status', payload);
       
       console.log('Update response:', response.data);
 
       // Refresh the orders list after updating status
-      const ordersResponse = await axios.get('http://localhost:4000/api/orders/');
+      const ordersResponse = await axios.get('https://law-account-backend.vercel.app//api/orders/');
       console.log('Refreshed orders response:', ordersResponse.data);
       setOrders(ordersResponse.data);
     } catch (err) {

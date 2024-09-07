@@ -34,7 +34,7 @@ function App() {
     const trackVisitor = async () => {
       try {
         const source = getQueryParam('source') || 'Website'; // Default source if none provided
-        await axios.post('http://localhost:4000/api/track-visitor', { source });
+        await axios.post('https://law-account-backend.vercel.app//api/track-visitor', { source });
         console.log('Visit tracked successfully');
       } catch (error) {
         console.error('Error tracking visit:', error);

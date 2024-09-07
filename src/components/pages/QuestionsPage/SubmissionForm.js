@@ -47,7 +47,7 @@ const SubmissionForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:4000/api/submissions', formData, {
+      const response = await axios.post('https://law-account-backend.vercel.app//api/submissions', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
